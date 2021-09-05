@@ -8,14 +8,14 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from '@apollo/client/utilities';
 
 const wsLink = new WebSocketLink({
-    uri: 'ws://localhost:8000/subscriptions',
+    uri: 'wss://rocky-mountain-74108.herokuapp.com/subscriptions',
     options: {
         reconnect: false,
     }
 });
 
 const httpLink = createUploadLink({
-    uri: 'http://localhost:8000/'
+    uri: 'https://rocky-mountain-74108.herokuapp.com/'
 });
 
 const authLink = setContext(() => {
